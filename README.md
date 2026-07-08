@@ -4,7 +4,7 @@
 [![Excel](https://img.shields.io/badge/Dashboard-Excel-217346?logo=microsoftexcel&logoColor=white)](#-repository-structure)
 [![Data](https://img.shields.io/badge/Data-IMF%20WEO%20%7C%20World%20Bank%20GEM-blue)](#-data-sources)
 
-**Sovereign credit risk, macroeconomic, and fiscal stress analysis** built on IMF World Economic Outlook (WEO) and World Bank Global Economic Monitor (GEM) data, covering **~190 countries from 2000–2031**.
+**Sovereign credit risk, macroeconomic, and fiscal stress analysis** built on IMF World Economic Outlook (WEO) and World Bank Global Economic Monitor (GEM) data, covering **183 countries from 2000–2031**.
 
 This repository contains a **PostgreSQL analytical query suite** and a **fully modeled Excel dashboard** for evaluating sovereign debt sustainability, currency risk, liquidity, fiscal deficits, and macroeconomic stress signals across global economies — the kind of analysis used in emerging-market (EM) bond investing, IMF program design, sovereign credit ratings, and country-risk research.
 
