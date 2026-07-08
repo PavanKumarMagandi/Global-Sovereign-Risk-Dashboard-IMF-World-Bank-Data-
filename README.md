@@ -3,7 +3,6 @@
 [![SQL](https://img.shields.io/badge/SQL-PostgreSQL-336791?logo=postgresql&logoColor=white)](#-tech-stack)
 [![Excel](https://img.shields.io/badge/Dashboard-Excel-217346?logo=microsoftexcel&logoColor=white)](#-repository-structure)
 [![Data](https://img.shields.io/badge/Data-IMF%20WEO%20%7C%20World%20Bank%20GEM-blue)](#-data-sources)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 **Sovereign credit risk, macroeconomic, and fiscal stress analysis** built on IMF World Economic Outlook (WEO) and World Bank Global Economic Monitor (GEM) data, covering **~190 countries from 2000–2031**.
 
@@ -19,10 +18,9 @@ This repository contains a **PostgreSQL analytical query suite** and a **fully m
 - [The 10 Analytical Queries](#-the-10-analytical-queries)
 - [Risk Flag Convention](#-risk-flag-convention)
 - [How to Run](#️-how-to-run)
-- [Tech Stack](#-tech-stack)
+- [Tech Stack](#-tech-stack) 
 - [Data Sources](#-data-sources)
 - [Author](#-author)
-- [License](#-license)
 
 ---
 
@@ -214,12 +212,6 @@ Each query block is independent — no need to run them in order except to repro
 
 **Pavan Kumar Magandi**
 🔗 [GitHub](https://github.com/PavanKumarMagandi)
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](./LICENSE).
 
 ---
 
