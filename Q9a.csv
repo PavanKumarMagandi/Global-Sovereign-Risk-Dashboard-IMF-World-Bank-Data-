@@ -1,0 +1,8 @@
+"region","total_countries_in_region","countries_with_high_debt","countries_with_thin_reserves","countries_with_fiscal_deficit","countries_with_ca_deficit","countries_stressed_on_2plus_dimensions","countries_stressed_on_3plus_dimensions","avg_regional_stress_score","total_regional_gdp_usd_billions","pct_regional_gdp_in_stressed_countries","regional_stress_flag"
+"South Asia","6","4","5","5","2","5","4","2.67","7719.0","99.1","RED - High Regional Contagion Risk"
+"North America","2","2","2","1","0","2","1","2.50","42170.7","100.0","RED - High Regional Contagion Risk"
+"Latin America & Caribbean","33","9","11","5","7","9","5","0.97","10160.6","36.0","GREEN - Region Broadly Stable"
+"Middle East, North Africa, Afghanistan & Pakistan","20","8","3","5","3","6","1","0.95","6884.7","22.0","GREEN - Region Broadly Stable"
+"Europe & Central Asia","51","15","21","4","6","15","3","0.90","41401.3","62.7","GREEN - Region Broadly Stable"
+"Sub-Saharan Africa","47","12","12","7","11","12","4","0.89","3436.8","16.4","GREEN - Region Broadly Stable"
+"East Asia & Pacific","31","5","3","6","8","7","2","0.71","46028.8","70.9","GREEN - Region Broadly Stable"

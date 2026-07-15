@@ -1,0 +1,8 @@
+"country_name","country_code","reer_year","reer_month","reer_index","market_rate_lcu_per_usd","gdp_usd_billions","current_account_pct_gdp_now","current_account_usd_billions_now","current_account_pct_gdp_2yr_ago","current_account_usd_billions_2yr_ago","ca_pct_deterioration_2yr","ca_usd_deterioration_2yr","ca_pct_gdp_forecast_2yr_ahead","ca_pct_gdp_forecast_4yr_ahead","devaluation_risk_flag"
+"Central African Republic","CAF",2018,12,"132.48","581.02","2.383","-7.19","-0.17","-0.46","-0.01","-6.73","-0.16","-7.64","-12.87","RED - Severe Devaluation Risk"
+"United States","USA",2024,10,"127.58","1.00","29298.025","-4.05","-1185.30","-3.81","-993.13","-0.23","-192.17","-3.71","-3.57","YELLOW - Elevated Devaluation Risk"
+"Moldova","MDA",2018,12,"123.62","17.21","11.252","-10.77","-1.21","-3.61","-0.29","-7.16","-0.92","-7.69","-17.11","YELLOW - Elevated Devaluation Risk"
+"Burundi","BDI",2018,12,"117.35","1808.94","3.037","-12.82","-0.39","-11.06","-0.33","-1.76","-0.06","-11.16","-16.79","YELLOW - Elevated Devaluation Risk"
+"Fiji","FJI",2018,12,"115.21","2.12","5.581","-8.42","-0.47","-3.54","-0.17","-4.88","-0.30","-11.97","-15.35","YELLOW - Elevated Devaluation Risk"
+"Bahrain","BHR",2018,12,"111.55","0.38","39.568","-6.15","-2.44","-4.41","-1.49","-1.75","-0.94","-9.05","14.72","YELLOW - Elevated Devaluation Risk"
+"Antigua and Barbuda","ATG",2018,12,"110.25","2.71","1.662","-13.99","-0.23","-2.39","-0.04","-11.61","-0.20","-15.57","-15.08","YELLOW - Elevated Devaluation Risk"

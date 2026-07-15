@@ -1,0 +1,3 @@
+"lending_category","num_country_year_observations","num_countries","avg_yoy_export_price_pct_change","export_price_volatility_stddev","worst_export_price_yoy_shock","best_export_price_yoy_swing"
+"IDA","7","1","7.06","15.78","-7.73","30.60"
+"IBRD","98","15","0.69","12.04","-42.14","46.82"

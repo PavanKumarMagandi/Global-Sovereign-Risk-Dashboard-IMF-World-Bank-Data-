@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Sovereign Risk — Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="loadingOverlay" class="loading-overlay">
+  <div class="loading-box">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading sovereign risk data…</div>
+    <div class="loading-sub">Parsing Q1–Q10 CSVs from <code>/data</code></div>
+  </div>
+</div>
+
+<div id="loadErrorBanner" class="load-error-banner" hidden>
+  <strong>Couldn't load the data files.</strong>
+  <span>This dashboard fetches CSVs from the <code>/data</code> folder, which browsers block when a page is opened
+  directly as a <code>file://</code> path. Serve the <code>dashboard</code> folder over a local server —
+  e.g. VS Code's <b>Live Server</b> extension, or <code>python -m http.server</code> — then open it via
+  <code>http://localhost…</code> instead of double-clicking <code>index.html</code>.</span>
+  <div class="load-error-detail" id="loadErrorDetail"></div>
+</div>
+
+<div class="app-shell">
+
+  <!-- ===================== SIDEBAR ===================== -->
+  <aside class="sidebar" id="sidebar">
+    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Collapse sidebar" title="Collapse sidebar">‹</button>
+
+    <div class="brand">
+      <div class="brand-mark">GSR</div>
+      <div class="brand-name">GLOBAL SOVEREIGN RISK<span>IMF WEO · World Bank GEM<br>184-country reference universe · 2000–2031</span></div>
+    </div>
+
+    <nav class="navlist">
+      <div class="nav-group-label">Overview</div>
+      <a href="#masthead" class="navlink"><span class="nav-bullet"></span><span class="navlink-text">Summary</span></a>
+      <a href="#contagion" class="navlink"><span class="nav-bullet"></span><span class="navlink-text">Regional Contagion</span></a>
+
+      <div class="nav-group-label">Pillar I — Solvency &amp; Liquidity</div>
+      <a href="#q1" class="navlink"><span class="nav-bullet"></span><span class="navlink-text">Reserves vs. Debt</span></a>
+      <a href="#q8" class="navlink"><span class="nav-bullet"></span><span class="navlink-text">Fiscal Doomsday Clock</span></a>
+
+      <div class="nav-group-label">Pillar II — External Sector &amp; Currency</div>
+      <a href="#q2" class="navlink"><span class="nav-bullet"></span><span class="navlink-text">Devaluation Risk</span></a>
+      <a href="#q3" class="navlink"><span class="nav-bullet"></span><span class="navlink-text">Trade Resilience</span></a>
+      <a href="#q7" class="navlink"><span class="nav-bullet"></span><span class="navlink-text">PPP Mispricing</span></a>
+
+      <div class="nav-group-label">Pillar III — Fiscal Quality &amp; Markets</div>
+      <a href="#q4" class="navlink"><span class="nav-bullet"></span><span class="navlink-text">Market Disconnect</span></a>
+      <a href="#q6" class="navlink"><span class="nav-bullet"></span><span class="navlink-text">Spending Efficiency</span></a>
+
+      <div class="nav-group-label">Pillar IV — Structural Trajectory</div>
+      <a href="#q5" class="navlink"><span class="nav-bullet"></span><span class="navlink-text">Misery Index</span></a>
+      <a href="#q10" class="navlink"><span class="nav-bullet"></span><span class="navlink-text">Deterioration Streaks</span></a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div>Done by: Pavan Kumar Magandi</div>
+      <div>Mail ID: pavanmagandi@gmail.com</div>
+      <div>Contact number: 8143233934</div>
+      <div><a href="https://github.com/PavanKumarMagandi" target="_blank" rel="noopener">GitHub Profile</a></div>
+    </div>
+  </aside>
+
+  <!-- ===================== CONTENT COLUMN ===================== -->
+  <div class="content-col">
+
+    <!-- ===================== FILTER CONSOLE ===================== -->
+    <div class="console-bar">
+      <div class="console-inner">
+
+        <div class="console-field">
+          <div class="console-label"><span class="console-dot"></span>Region</div>
+          <div class="region-select" id="regionSelect">
+            <button type="button" class="region-select-btn" id="regionSelectBtn">All regions</button>
+            <div class="region-select-panel" id="regionSelectPanel">
+              <label class="region-option region-option-all">
+                <input type="checkbox" id="regionAllCheckbox">All regions
+              </label>
+              <div class="region-option-divider"></div>
+              <div id="regionOptionsList"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="console-field">
+          <div class="console-label"><span class="console-dot"></span>Country</div>
+          <div class="country-combo" id="countryCombo">
+            <input type="text" id="countryInput" placeholder="Search country…" autocomplete="off">
+            <div class="country-suggestions" id="countrySuggestions"></div>
+            <div class="country-chips" id="countryChips"></div>
+          </div>
+        </div>
+
+        <div class="console-field">
+          <div class="console-label"><span class="console-dot"></span>Safe score</div>
+          <div class="score-slider" id="scoreSlider">
+            <div class="score-slider-track"><div class="score-slider-fill" id="scoreFill"></div></div>
+            <input type="range" min="-4" max="4" step="0.1" value="-4" id="scoreMin" class="range-thumb">
+            <input type="range" min="-4" max="4" step="0.1" value="4" id="scoreMax" class="range-thumb">
+            <div class="score-slider-labels"><span id="scoreMinLabel">-4.0</span><span id="scoreMaxLabel">+4.0</span></div>
+          </div>
+        </div>
+
+        <div class="console-field">
+          <div class="console-label"><span class="console-dot"></span>Year</div>
+          <select class="console-select" id="yearSelect"></select>
+        </div>
+
+        <div class="console-actions">
+          <span class="console-count" id="filterCount"></span>
+          <button type="button" class="console-reset" id="filterReset">Reset</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===================== MAIN ===================== -->
+    <main class="main">
+
+    <!-- MASTHEAD -->
+    <header class="masthead" id="masthead">
+      <div class="masthead-eyebrow">Global Sovereign Risk — Vol. I</div>
+      <h1 class="masthead-title"> From the IMF WEO · World Bank GEM 184-country reference universe · 2000–2031 .</h1>
+      <p class="masthead-dek">
+        Ten analytical screens built on IMF World Economic Outlook forecasts and World Bank Global
+        Economic Monitor market data — cross-checking solvency, currency valuation, fiscal quality
+        and structural trajectory to surface sovereign stress before it becomes a headline. Use the
+        console above to slice every screen by region, country, composite safe score or year.
+      </p>
+
+      <div class="kpi-row" id="kpiRow"></div>
+    </header>
+
+    <!-- REGIONAL CONTAGION -->
+    <section class="section" id="contagion">
+      <div class="section-head">
+        <div>
+          <h2>Regional Sovereign Stress Clustering</h2>
+          <p class="section-brief">Which regions carry the highest concentration of simultaneously
+          stressed countries — combining debt burden, reserve adequacy, fiscal deficit and current
+          account deficit into one regional stress score. Stress compounds regionally through trade
+          linkages, shared currency zones and investor sentiment; it is rarely a solo event.</p>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <h3>Regional stress score vs. GDP share exposed</h3>
+          <span class="chart-card-note">Bubble size = total regional GDP</span>
+        </div>
+        <canvas id="chartQ9a" height="120"></canvas>
+        <span class="filter-note">Region filter shows/hides bubbles — each bubble's stress score and GDP share stay exactly as pre-aggregated in SQL, not recalculated</span>
+      </div>
+
+      <div class="table-card">
+        <div class="table-card-head">
+          <h3>Country-level stress detail</h3>
+          <input type="text" class="table-search" data-table="tblQ9b" placeholder="Search country or region…">
+        </div>
+        <div class="table-scroll">
+          <table id="tblQ9b"></table>
+        </div>
+        <span class="filter-note">Not affected by the year filter — this data has no year dimension</span>
+      </div>
+    </section>
+
+    <!-- PILLAR I -->
+    <div class="pillar-divider"><span>Pillar I</span>Solvency &amp; Liquidity</div>
+
+    <section class="section" id="q1">
+      <div class="section-head">
+        <div>
+          <h2>The Reserves-vs-Debt Solvency Cross-Check</h2>
+          <p class="section-brief">Among high-debt countries, how many actual dollars of FX reserves
+          exist for every dollar of government debt — and is that cushion shrinking right now? A true
+          apples-to-apples solvency ratio, not two figures in incompatible units sitting side by side.</p>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <h3>Reserve cushion vs. debt burden</h3>
+          <span class="chart-card-note">Bubble color = liquidity risk flag</span>
+        </div>
+        <canvas id="chartQ1" height="110"></canvas>
+        <span class="filter-note">Not affected by the year filter — this data has no year dimension</span>
+      </div>
+      <div class="table-card">
+        <div class="table-card-head">
+          <h3 id="countQ1">Full screen — 30 highest-debt economies</h3>
+          <input type="text" class="table-search" data-table="tblQ1" placeholder="Search country…">
+        </div>
+        <div class="table-scroll"><table id="tblQ1"></table></div>
+      </div>
+    </section>
+
+    <section class="section" id="q8">
+      <div class="section-head">
+        <div>
+          <h2>The Fiscal Doomsday Clock</h2>
+          <p class="section-brief">Debt CAGR vs. GDP CAGR, projected forward to the year each country's
+          debt-to-GDP ratio effectively doubles. A static ratio is a snapshot; this is a trajectory —
+          the difference between two countries at 60% debt/GDP today on completely different paths.</p>
+        </div>
+      </div>
+      <div class="table-card">
+        <div class="table-card-head">
+          <h3>Countdown, sorted by urgency</h3>
+          <input type="text" class="table-search" data-table="tblQ8" placeholder="Search country…">
+        </div>
+        <div class="table-scroll"><table id="tblQ8"></table></div>
+        <span class="filter-note">Not affected by the year filter — this screen spans a date range (start–end year), not a single year</span>
+      </div>
+    </section>
+
+    <!-- PILLAR II -->
+    <div class="pillar-divider"><span>Pillar II</span>External Sector &amp; Currency</div>
+
+    <section class="section" id="q2">
+      <div class="section-head">
+        <div>
+          <h2>Currency Overvaluation vs. External Imbalance</h2>
+          <p class="section-brief">Currencies that look strong on REER while the current account is
+          actually worsening over a two-year trend — the classic setup for a forced devaluation. A
+          stable deficit is a structural fact; a widening one is an emerging crisis.</p>
+        </div>
+      </div>
+      <div class="table-card">
+        <div class="table-card-head">
+          <h3>Flagged currencies</h3>
+          <input type="text" class="table-search" data-table="tblQ2" placeholder="Search country…">
+        </div>
+        <div class="table-scroll"><table id="tblQ2"></table></div>
+      </div>
+    </section>
+
+    <section class="section" id="q3">
+      <div class="section-head">
+        <div>
+          <h2>Trade Resilience by Income Group</h2>
+          <p class="section-brief">Do IDA (low-income) countries absorb export-price shocks worse than
+          IBRD (middle-income) countries? Built from true monthly GEM export price observations,
+          re-aggregated to annual — not a pre-aggregated shortcut.</p>
+        </div>
+      </div>
+      <div class="compare-grid" id="q3Cards"></div>
+      <span class="unfiltered-badge">Unfiltered — pre-aggregated by lending category in SQL</span>
+    </section>
+
+    <section class="section" id="q7">
+      <div class="section-head">
+        <div>
+          <h2>The PPP Currency Mispricing Gap</h2>
+          <p class="section-brief">The gap between each currency's theoretical PPP-implied rate and its
+          actual market rate — a "fair value" screen built from raw macro data instead of burger
+          prices. Large gaps flag currencies most over- or under-valued in real terms.</p>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <h3>Most extreme mispricings</h3>
+          <span class="chart-card-note">Top 15 by absolute deviation</span>
+        </div>
+        <canvas id="chartQ7" height="130"></canvas>
+      </div>
+      <div class="table-card">
+        <div class="table-card-head">
+          <h3 id="countQ7">Full screen — 184 currencies</h3>
+          <input type="text" class="table-search" data-table="tblQ7" placeholder="Search country…">
+        </div>
+        <div class="table-scroll"><table id="tblQ7"></table></div>
+      </div>
+    </section>
+
+    <!-- PILLAR III -->
+    <div class="pillar-divider"><span>Pillar III</span>Fiscal Quality &amp; Market Perception</div>
+
+    <section class="section" id="q4">
+      <div class="section-head">
+        <div>
+          <h2>Stock Market Disconnect from Macro Fundamentals</h2>
+          <p class="section-brief">Countries where equity markets are rallying while fiscal balances
+          actively deteriorate — the asymmetric, contrarian signal a macro desk hunts for before
+          consensus catches up and forces a repricing.</p>
+        </div>
+      </div>
+      <div class="table-card">
+        <div class="table-card-head">
+          <h3>Disconnected markets</h3>
+          <input type="text" class="table-search" data-table="tblQ4" placeholder="Search country…">
+        </div>
+        <div class="table-scroll"><table id="tblQ4"></table></div>
+      </div>
+    </section>
+
+    <section class="section" id="q6">
+      <div class="section-head">
+        <div>
+          <h2>Government Spending Efficiency vs. Growth Payoff</h2>
+          <p class="section-brief">For every real dollar of government spending, how many real dollars
+          of GDP growth did the economy produce? Spending level alone says nothing about quality —
+          this isolates the countries getting the least growth per dollar spent.</p>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <h3>Spend-to-growth efficiency</h3>
+          <span class="chart-card-note">USD growth generated per USD of government spend</span>
+        </div>
+        <canvas id="chartQ6" height="120"></canvas>
+      </div>
+      <div class="table-card">
+        <div class="table-card-head">
+          <h3>Full screen</h3>
+          <input type="text" class="table-search" data-table="tblQ6" placeholder="Search country…">
+        </div>
+        <div class="table-scroll"><table id="tblQ6"></table></div>
+      </div>
+    </section>
+
+    <!-- PILLAR IV -->
+    <div class="pillar-divider"><span>Pillar IV</span>Structural Trajectory</div>
+
+    <section class="section" id="q5">
+      <div class="section-head">
+        <div>
+          <h2>Unemployment–Inflation Misery Ranking, Region-Adjusted</h2>
+          <p class="section-brief">Combined unemployment + inflation burden, ranked both globally and
+          against regional norms — so a reviewer can see at a glance when a country is "bad globally
+          but normal regionally" versus a genuine regional outlier.</p>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <h3>Worst 15 by misery index</h3>
+        </div>
+        <canvas id="chartQ5" height="130"></canvas>
+        <span class="filter-note">Not affected by the year filter — this data has no year dimension</span>
+      </div>
+      <div class="table-card">
+        <div class="table-card-head">
+          <h3 id="countQ5">Full screen — 116 countries</h3>
+          <input type="text" class="table-search" data-table="tblQ5" placeholder="Search country…">
+        </div>
+        <div class="table-scroll"><table id="tblQ5"></table></div>
+      </div>
+    </section>
+
+    <section class="section" id="q10">
+      <div class="section-head">
+        <div>
+          <h2>The Consecutive-Year Deterioration Streak</h2>
+          <p class="section-brief">Countries deteriorating across fiscal balance, debt and current
+          account for three-plus consecutive years — distinguishing genuine structural decline from a
+          single bad year (COVID-2020) that a fixed-lookback comparison would smooth over and miss.</p>
+        </div>
+      </div>
+      <div class="table-card">
+        <div class="table-card-head">
+          <h3>Structural decliners</h3>
+          <input type="text" class="table-search" data-table="tblQ10" placeholder="Search country…">
+        </div>
+        <div class="table-scroll"><table id="tblQ10"></table></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">GLOBAL SOVEREIGN RISK</div>
+          <p>Sovereign Risk Terminal. Built on IMF World Economic Outlook (annual, 2000–2031
+          incl. projections), World Bank Global Economic Monitor (monthly market data) and World Bank
+          Country Metadata. Ten screens across four risk pillars: solvency &amp; liquidity, external
+          sector &amp; currency, fiscal quality &amp; market perception, and structural trajectory.
+          Filterable by region, country, composite safe score and year across a 184-country universe.</p>
+        </div>
+        <div>
+          <div class="footer-label">Flag convention</div>
+          <div class="legend-row"><span class="dot red"></span>Red — primary danger threshold breached</div>
+          <div class="legend-row"><span class="dot amber"></span>Amber — elevated, monitor closely</div>
+          <div class="legend-row"><span class="dot green"></span>Green — broadly stable</div>
+          <div class="legend-row"><span class="dot blue"></span>Blue — valuation / opportunity signal</div>
+        </div>
+        <div>
+          <div class="footer-label">Author</div>
+          <p>Pavan Kumar Magandi<br>SQL analysis · PostgreSQL<br>
+          pavanmagandi@gmail.com<br>
+          <a href="https://github.com/PavanKumarMagandi" target="_blank" rel="noopener">github.com/PavanKumarMagandi</a></p>
+        </div>
+      </div>
+    </footer>
+
+    </main>
+  </div>
+</div>
+
+<script src="js/vendor/chart.min.js"></script>
+<script src="js/vendor/papaparse.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

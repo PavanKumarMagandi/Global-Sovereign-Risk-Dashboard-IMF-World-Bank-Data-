@@ -1,0 +1,191 @@
+"country_name","region","income_group","debt_pct_gdp","gdp_usd_billions","reserves_usd_billions","fiscal_balance_pct_gdp","ca_pct_gdp","debt_stress_flag","reserves_stress_flag","fiscal_stress_flag","ca_stress_flag","country_stress_score"
+"Aruba","Latin America & Caribbean","High income","48.028","5.557",NULL,"1.087","4.684",0,0,0,0,0
+"Afghanistan","Middle East, North Africa, Afghanistan & Pakistan","Low income","7.976","19.662",NULL,"-0.891","-40.19",0,0,0,1,1
+"Angola","Sub-Saharan Africa","Lower middle income","57.718","179.876","15.4104053700000000","-3.88","0.591",0,1,0,0,1
+"Albania","Europe & Central Asia","Upper middle income","47.994","44.032","8.7297500000000000","-2.25","-3.035",0,0,0,0,0
+"Andorra","Europe & Central Asia","High income","24.503","5.878",NULL,"1.75","16.225",0,0,0,0,0
+"United Arab Emirates","Middle East, North Africa, Afghanistan & Pakistan","High income","26.007","815.049",NULL,"4.489","9.04",0,0,0,0,0
+"Argentina","Latin America & Caribbean","Upper middle income","52.158","878.051",NULL,"1.28","-0.337",0,0,0,0,0
+"Armenia","Europe & Central Asia","Upper middle income","46.722","43.618","5.5207000000000000","-1.321","-4.437",0,0,0,0,0
+"Antigua and Barbuda","Latin America & Caribbean","High income","58.411","2.972","0.32865974750000000000","-0.946","-9.391",0,0,0,1,1
+"Australia","East Asia & Pacific","High income","49.124","2590.235","62.1343515500000000","-1.448","-2.414",0,1,0,0,1
+"Austria","Europe & Central Asia","High income","86.424","727.089","15.1440699400000000","-3.644","2.526",1,1,0,0,2
+"Azerbaijan","Europe & Central Asia","Upper middle income","20.236","105.923","5.1198269080000000","-0.488","0.599",0,0,0,0,0
+"Burundi","Sub-Saharan Africa","Low income","31.332","9.749",NULL,"-3.16","-4.844",0,0,0,0,0
+"Belgium","Europe & Central Asia","High income","122.339","887.607","24.7925780300000000","-5.78","-0.704",1,1,1,0,3
+"Benin","Sub-Saharan Africa","Lower middle income","50.304","41.601",NULL,"-2.9","-3.994",0,0,0,0,0
+"Burkina Faso","Sub-Saharan Africa","Low income","46.385","47.063",NULL,"-3","5.452",0,0,0,0,0
+"Bangladesh","South Asia","Lower middle income","48.799","740.011","35.1091820000000000","-5.654","-2.023",0,1,1,0,2
+"Bulgaria","Europe & Central Asia","High income","35.852","200.586","8.8031700000000000","-3.335","1.175",0,1,0,0,1
+"Bahrain","Middle East, North Africa, Afghanistan & Pakistan","High income","161.228","61.074",NULL,"-8.721","2.038",1,0,1,0,2
+"Bahamas, The","Latin America & Caribbean","High income","61.934","20.201","1.3453446740000000","0.25","-5.882",0,1,0,1,2
+"Bosnia and Herzegovina","Europe & Central Asia","Upper middle income","41.703","47.66","10.9406000500000000","-4.626","-3.971",0,0,0,0,0
+"Belarus","Europe & Central Asia","Upper middle income","28.158","133.483","12.3278593700000000","-0.252","-3.258",0,0,0,0,0
+"Belize","Latin America & Caribbean","Upper middle income","59.983","4.071","0.29446843510000000000","-1.087","-3.201",0,1,0,0,1
+"Bolivia","Latin America & Caribbean","Lower middle income","102.702","80.743","4.3202000000000000","-9.299","1.238",1,1,1,0,3
+"Brazil","Latin America & Caribbean","Upper middle income","106.52","3378.877","371.0740000000000000","-6.109","-1.846",1,1,1,0,3
+"Barbados","Latin America & Caribbean","High income","69.109","10.75",NULL,"0.604","-5.214",0,0,0,1,1
+"Brunei Darussalam","East Asia & Pacific","High income","1.227","20.662",NULL,"-9.022","15.923",0,0,1,0,1
+"Bhutan","South Asia","Lower middle income","123.962","6.209","0.98724703560000000000","-5.032","-18.382",1,1,1,1,4
+"Botswana","Sub-Saharan Africa","Upper middle income","64.367","33.58","6.6569136380000000","-7.458","-2.423",0,0,1,0,1
+"Central African Republic","Sub-Saharan Africa","Low income","81.569","4.783",NULL,"-9.553","-5.432",1,0,1,1,3
+"Canada","North America","High income","103.525","3139.433","125.9609538000000000","-1.524","-0.022",1,1,0,0,2
+"Switzerland","Europe & Central Asia","High income","33.458","1398.268","943.2420600000000000","0.179","6.988",0,0,0,0,0
+"Chile","Latin America & Caribbean","High income","49.169","519.088","59.2041529500000000","-2.005","-2.41",0,0,0,0,0
+"China","East Asia & Pacific","Upper middle income","126.786","27496.67","3497.7516180000000000","-8.014","2.843",1,1,1,0,3
+"Cote d'Ivoire","Sub-Saharan Africa","Lower middle income","48.572","169.767",NULL,"-2.998","-2.488",0,0,0,0,0
+"Cameroon","Sub-Saharan Africa","Lower middle income","31.861","92.356","4.7394757850000000","-1.202","-3.609",0,0,0,0,0
+"Congo, Dem. Rep.","Sub-Saharan Africa","Low income","33.496","175.414","0.66527209500000000000","-1.151","-1.67",0,1,0,0,1
+"Congo, Rep.","Sub-Saharan Africa","Lower middle income","60.438","23.214",NULL,"4.648","-4.293",0,0,0,0,0
+"Colombia","Latin America & Caribbean","Upper middle income","59.229","661.138","67.4359000000000000","-2.412","-3.193",0,0,0,0,0
+"Comoros","Sub-Saharan Africa","Lower middle income","26.809","2.46",NULL,"-1.391","-2.982",0,0,0,0,0
+"Cabo Verde","Sub-Saharan Africa","Upper middle income","71.406","4.902","0.60643060030000000000","0.194","-2.307",1,0,0,0,1
+"Costa Rica","Latin America & Caribbean","High income","58.597","144.622","19.2123000000000000","-2.195","-1.314",0,0,0,0,0
+"Cyprus","Europe & Central Asia","High income","32.052","58.098","1.0797166470000000","1.611","-10.508",0,1,0,1,2
+"Czechia","Europe & Central Asia","High income","53.624","526.286","181.0968700000000000","-3.064","-0.54",0,0,0,0,0
+"Germany","Europe & Central Asia","High income","73.671","6351.962","111.1431023000000000","-3.66","3.835",1,1,0,0,2
+"Djibouti","Middle East, North Africa, Afghanistan & Pakistan","Lower middle income","16.224","6.521","0.45419390970000000000","0.025","8.269",0,0,0,0,0
+"Dominica","Latin America & Caribbean","Upper middle income","81.579","0.994","0.19132360830000000000","-0.007","-16.482",1,0,0,1,2
+"Denmark","Europe & Central Asia","High income","29.836","611.871","118.5892193000000000","-0.507","11.169",0,0,0,0,0
+"Dominican Republic","Latin America & Caribbean","Upper middle income","50.015","190.474","16.1807000000000000","-2.002","-1.665",0,0,0,0,0
+"Algeria","Middle East, North Africa, Afghanistan & Pakistan","Upper middle income","85.904","327.645",NULL,"-8.601","-1.486",1,0,1,0,2
+"Ecuador","Latin America & Caribbean","Upper middle income","54.416","171.302","11.5039000000000000","-2.881","3.075",0,1,0,0,1
+"Egypt, Arab Rep.","Middle East, North Africa, Afghanistan & Pakistan","Lower middle income","70.92","665.595","52.7480000000000000","-3.077","-2.668",1,1,0,0,2
+"Eritrea","Sub-Saharan Africa","Low income","260.393","1.982",NULL,"2.717","12.988",1,0,0,0,1
+"Spain","Europe & Central Asia","High income","90.443","2572.443","89.3320543400000000","-2.153","1.468",1,1,0,0,2
+"Estonia","Europe & Central Asia","High income","41.211","65.152","2.5133233750000000","-3.583","-1.389",0,1,0,0,1
+"Ethiopia","Sub-Saharan Africa",NULL,"27.033","242.553",NULL,"-1.525","-2.598",0,0,0,0,0
+"Finland","Europe & Central Asia","High income","100.789","402.417","16.3589353600000000","-3.71","1.144",1,1,0,0,2
+"Fiji","East Asia & Pacific","Upper middle income","76.027","8.457",NULL,"-1.758","-6.625",1,0,0,1,2
+"France","Europe & Central Asia","High income","120.736","4116.865","92.7762753100000000","-2.895","0.425",1,1,0,0,2
+"Micronesia, Fed. Sts.","East Asia & Pacific","Lower middle income","9.538","0.614","0.20352821920000000000","-1.194","-0.961",0,0,0,0,0
+"Gabon","Sub-Saharan Africa","Upper middle income","121.05","28.906",NULL,"-11.813","-6.576",1,0,1,1,3
+"United Kingdom","Europe & Central Asia","High income","102.552","5403.155","174.5620196000000000","-1.605","-2.218",1,1,0,0,2
+"Georgia","Europe & Central Asia","Upper middle income","32.983","67.449","6.6585200000000000","-2.212","-4.966",0,0,0,0,0
+"Ghana","Sub-Saharan Africa","Lower middle income","42.327","151.56","14.4698000000000000","-2.174","4.933",0,0,0,0,0
+"Guinea","Sub-Saharan Africa","Lower middle income","28.925","47.534",NULL,"-2.5","-1.425",0,0,0,0,0
+"Gambia, The","Sub-Saharan Africa","Low income","44.289","4.106","0.19177326100000000000","-0.498","-2.333",0,1,0,0,1
+"Guinea-Bissau","Sub-Saharan Africa","Low income","65.237","4.232",NULL,"-2.981","-3.962",0,0,0,0,0
+"Equatorial Guinea","Sub-Saharan Africa","Upper middle income","44.694","15.727","0.04892981361000000000","-2.234","-3.31",0,1,0,0,1
+"Greece","Europe & Central Asia","High income","110.935","370.551","8.3433915130000000","-0.696","-3.997",1,1,0,0,2
+"Grenada","Latin America & Caribbean","Upper middle income","66.751","1.878","0.23381585380000000000","0.357","-14.088",0,0,0,1,1
+"Guatemala","Latin America & Caribbean","Upper middle income","29.574","188.873",NULL,"-2.446","-0.635",0,0,0,0,0
+"Guyana","Latin America & Caribbean","High income","28.894","53.154","0.51850936950000000000","-1.099","19.252",0,1,0,0,1
+"Hong Kong SAR, China","East Asia & Pacific","High income","19.825","562.359","435.6230000000000000","-0.752","11.421",0,0,0,0,0
+"Honduras","Latin America & Caribbean","Lower middle income","34.461","55.059",NULL,"-0.645","-3.716",0,0,0,0,0
+"Croatia","Europe & Central Asia","High income","58.68","147.301","4.2472414520000000","-2.442","-1.87",0,1,0,0,1
+"Haiti","Latin America & Caribbean","Lower middle income","11.772","50.588",NULL,"-1.497","-2.084",0,0,0,0,0
+"Hungary","Europe & Central Asia","High income","88.793","346.359","70.6087800000000000","-5.487","1.848",1,0,1,0,2
+"Indonesia","East Asia & Pacific","Upper middle income","42.217","2245.812","151.9011600000000000","-2.833","-0.784",0,0,0,0,0
+"India","South Asia","Lower middle income","77.689","6792.432","728.4940000000000000","-6.552","-1.946",1,1,1,0,3
+"Ireland","Europe & Central Asia","High income","28.024","924.063","11.8865351800000000","0.418","7.728",0,1,0,0,1
+"Iran, Islamic Rep.","Middle East, North Africa, Afghanistan & Pakistan","Upper middle income","44.146","363.953",NULL,"-3.609","2.7",0,0,0,0,0
+"Iraq","Middle East, North Africa, Afghanistan & Pakistan","Upper middle income","70.575","360.511",NULL,"-7.275","-5.575",1,0,1,1,3
+"Iceland","Europe & Central Asia","High income","42.956","55.162","7.5304192460000000","-0.048","0.494",0,0,0,0,0
+"Israel","Middle East, North Africa, Afghanistan & Pakistan","High income","73.238","916.264","115.2659005000000000","-4.94","2.794",1,0,0,0,1
+"Italy","Europe & Central Asia","High income","136.1","3127.67","97.6376744800000000","-2.712","2.172",1,1,0,0,2
+"Jamaica","Latin America & Caribbean","Upper middle income","60.527","27.472","6.8041000000000000","-1.539","0.458",0,0,0,0,0
+"Jordan","Middle East, North Africa, Afghanistan & Pakistan","Lower middle income","75.686","84.39","43.5773137700000000","-4.299","-4.565",1,0,0,0,1
+"Japan","East Asia & Pacific","High income","192.805","5128.325","1269.7574200000000000","-4.039","4.052",1,1,0,0,2
+"Kazakhstan","Europe & Central Asia","Upper middle income","32.106","501.684","73.6780000000000000","-1.717","-1.984",0,0,0,0,0
+"Kenya","Sub-Saharan Africa","Lower middle income","75.134","196.043","18.6080000000000000","-6.319","-3.225",1,1,1,0,3
+"Kyrgyz Republic","Europe & Central Asia","Lower middle income","38.787","32.491","9.6254400000000000","-2.526","-5.396",0,0,0,1,1
+"Cambodia","East Asia & Pacific","Lower middle income","27.783","76.069","26.2167900000000000","-3.31","-6.793",0,0,0,1,1
+"Kiribati","East Asia & Pacific","Lower middle income","37.75","0.48",NULL,"-14.72","-14.761",0,0,1,1,2
+"St. Kitts and Nevis","Latin America & Caribbean","High income","79.225","1.44","0.36321683060000000000","-6.003","-11.862",1,0,1,1,3
+"Korea, Rep.","East Asia & Pacific","High income","63.146","2357.31","427.6250000000000000","-1.079","5.459",0,0,0,0,0
+"Kuwait","Middle East, North Africa, Afghanistan & Pakistan","High income","37.848","200.267",NULL,"28.707","14.301",0,0,0,0,0
+"Lao PDR","East Asia & Pacific","Lower middle income","51.683","24.522",NULL,"1.677","-0.615",0,0,0,0,0
+"Lebanon","Middle East, North Africa, Afghanistan & Pakistan","Lower middle income","139.398","34.497",NULL,"3.254","-22.475",1,0,0,1,2
+"Liberia","Sub-Saharan Africa","Low income","43.1","7.976","0.56325897440000000000","-0.947","-14.293",0,0,0,1,1
+"St. Lucia","Latin America & Caribbean","Upper middle income","77.374","3.433","0.28582430970000000000","-2.427","-1.103",1,1,0,0,2
+"Liechtenstein","Europe & Central Asia","High income","0.478","11.319",NULL,"3.301","11.998",0,0,0,0,0
+"Sri Lanka","South Asia","Lower middle income","100.84","98.964","7.2840000000000000","-5.426","1.219",1,1,1,0,3
+"Lesotho","Sub-Saharan Africa","Lower middle income","50.01","3.743","0.72852765000000000000","3.42","-0.053",0,0,0,0,0
+"Lithuania","Europe & Central Asia","High income","56.251","134.66","7.6005000000000000","-4.31","1.653",0,1,0,0,1
+"Luxembourg","Europe & Central Asia","High income","35.2","134.618","2.7630134510000000","-3.073","4.998",0,1,0,0,1
+"Latvia","Europe & Central Asia","High income","53.49","69.132",NULL,"-4.015","-3.581",0,0,0,0,0
+"Morocco","Middle East, North Africa, Afghanistan & Pakistan","Lower middle income","61.041","283.416","50.5075592800000000","-3.044","-3.303",0,0,0,0,0
+"Moldova","Europe & Central Asia","Upper middle income","42.527","32.879","5.9234900000000000","-3.369","-15.612",0,0,0,1,1
+"Madagascar","Sub-Saharan Africa","Low income","48.309","33.637","1.7395882900000000","-3.596","-5.371",0,1,0,1,2
+"Maldives","South Asia","Upper middle income","131.9","11.033","0.72220855730000000000","-6.721","-12.364",1,1,1,1,4
+"Mexico","Latin America & Caribbean","Upper middle income","63.588","2667.215","257.8150000000000000","-3","-0.672",0,0,0,0,0
+"Marshall Islands","East Asia & Pacific","Upper middle income","16.572","0.433",NULL,"-3.707","-3.484",0,0,0,0,0
+"North Macedonia","Europe & Central Asia","Upper middle income","53.82","28.671","6.5761705990000000","-2.965","-3.045",0,0,0,0,0
+"Mali","Sub-Saharan Africa","Low income","37.917","48.303",NULL,"-2.38","0.76",0,0,0,0,0
+"Malta","Middle East, North Africa, Afghanistan & Pakistan","High income","47.288","41","1.5354448210000000","-2.624","5.024",0,1,0,0,1
+"Myanmar","East Asia & Pacific","Lower middle income","48.517","111.972",NULL,"-3.309","-2.129",0,0,0,0,0
+"Montenegro","Europe & Central Asia","Upper middle income","66.052","13.281",NULL,"-4.331","-15.72",0,0,0,1,1
+"Mongolia","East Asia & Pacific","Upper middle income","52.335","40.473","6.8018100000000000","-3.076","-9.346",0,0,0,1,1
+"Mozambique","Sub-Saharan Africa","Low income","111.483","35.57",NULL,"-10.962","-1.751",1,0,1,0,2
+"Mauritania","Sub-Saharan Africa","Lower middle income","40.759","17.042",NULL,"0.69","-6.297",0,0,0,1,1
+"Mauritius","Sub-Saharan Africa","Upper middle income","78.303","23.271","10.3834000000000000","-0.027","-2.346",1,0,0,0,1
+"Malawi","Sub-Saharan Africa","Low income","68.236","33.357",NULL,"-11.288","-9.441",0,0,1,1,2
+"Malaysia","East Asia & Pacific","Upper middle income","65.448","716.446","128.3000000000000000","-2.722","1.799",0,0,0,0,0
+"Namibia","Sub-Saharan Africa","Lower middle income","75.712","22.45","2.1499169080000000","-5.258","-12.058",1,1,1,1,4
+"Niger","Sub-Saharan Africa","Low income","44.281","36.646",NULL,"-3.045","-2.014",0,0,0,0,0
+"Nigeria","Sub-Saharan Africa","Lower middle income","30.105","496.284","45.0694500000000000","-1.872","3.318",0,0,0,0,0
+"Nicaragua","Latin America & Caribbean","Lower middle income","30.588","33.953","9.0453000000000000","2.117","-0.07",0,0,0,0,0
+"Netherlands","Europe & Central Asia","High income","48.028","1707.813","37.7382596000000000","-2.611","8.511",0,1,0,0,1
+"Norway","Europe & Central Asia","High income","25.462","617.687","90.5066525500000000","6.326","11.158",0,0,0,0,0
+"Nepal","South Asia","Lower middle income","45.312","70.396",NULL,"-2.978","-4.012",0,0,0,0,0
+"Nauru","East Asia & Pacific","High income","5.461","0.252",NULL,"15.515","1.968",0,0,0,0,0
+"New Zealand","East Asia & Pacific","High income","54.771","339.935","31.0140000000000000","-0.625","-2.889",0,0,0,0,0
+"Oman","Middle East, North Africa, Afghanistan & Pakistan","High income","29.091","139.327",NULL,"4.619","5.624",0,0,0,0,0
+"Pakistan","Middle East, North Africa, Afghanistan & Pakistan","Lower middle income","58.214","407.786","28.3555400000000000","-4.594","-0.954",0,1,0,0,1
+"Panama","Latin America & Caribbean","High income","53.925","131.26","2.1213037180000000","-1.446","-2.5",0,1,0,0,1
+"Peru","Latin America & Caribbean","Upper middle income","32.177","458.414","97.3440000000000000","-1.696","-0.83",0,0,0,0,0
+"Philippines","East Asia & Pacific","Lower middle income","54.737","777.576","113.2641100000000000","-1.537","-2.683",0,0,0,0,0
+"Palau","East Asia & Pacific","High income","28.219","0.474",NULL,"0.109","-12.521",0,0,0,1,1
+"Papua New Guinea","East Asia & Pacific","Lower middle income","34.371","42.785",NULL,"0.173","10.436",0,0,0,0,0
+"Poland","Europe & Central Asia","High income","77.574","1461.304","305.8042000000000000","-4.811","-0.975",1,0,0,0,1
+"Portugal","Europe & Central Asia","High income","74.38","461.165","17.0888578400000000","-1.583","0.54",1,1,0,0,2
+"Paraguay","Latin America & Caribbean","Upper middle income","36.637","79.788","8.6741000000000000","-1.421","-0.175",0,0,0,0,0
+"Qatar","Middle East, North Africa, Afghanistan & Pakistan","High income","35.476","304.998","220.3398584000000000","2.861","14.371",0,0,0,0,0
+"Romania","Europe & Central Asia","High income","70.394","648.39","18.4946807400000000","-5.242","-5.011",1,1,1,1,4
+"Russian Federation","Europe & Central Asia","High income","29.131","2615.027","809.3083000000000000","-2.756","1.125",0,0,0,0,0
+"Rwanda","Sub-Saharan Africa","Low income","61.598","24.68","1.3550587580000000","-3.642","-6.029",0,1,0,1,2
+"Saudi Arabia","Middle East, North Africa, Afghanistan & Pakistan","High income","42.219","1730.075","476.3610390000000000","-3.173","-3.755",0,0,0,0,0
+"Sudan","Sub-Saharan Africa","Low income","116.263","67.643",NULL,"-2.7","-9.026",1,0,0,1,2
+"Senegal","Sub-Saharan Africa","Lower middle income","121.406","52.61",NULL,"-3","-5.327",1,0,0,1,2
+"Singapore","East Asia & Pacific","High income","174.745","822.674","516.2370000000000000","1.835","16.324",1,0,0,0,1
+"Solomon Islands","East Asia & Pacific","Lower middle income","34.94","2.509",NULL,"-2.948","-4.774",0,0,0,0,0
+"Sierra Leone","Sub-Saharan Africa","Low income","31.77","10.423","0.50121075960000000000","-0.104","-3.005",0,0,0,0,0
+"El Salvador","Latin America & Caribbean","Upper middle income","74.359","52.243","4.9052000000000000","-1.437","-1.303",1,1,0,0,2
+"San Marino","Europe & Central Asia","High income","47.725","2.829","0.33895747690000000000","0.599","14.405",0,0,0,0,0
+"Serbia","Europe & Central Asia","Upper middle income","42.103","157.999",NULL,"-1.928","-4.824",0,0,0,0,0
+"South Sudan","Sub-Saharan Africa","Low income","42.752","8.144",NULL,"-0.935","6.201",0,0,0,0,0
+"Sao Tome and Principe","Sub-Saharan Africa","Lower middle income","38.309","1.82","0.04368354512000000000","2.651","-5.681",0,1,0,1,2
+"Suriname","Latin America & Caribbean","Upper middle income","35.43","14.086",NULL,"3.073","28.937",0,0,0,0,0
+"Slovak Republic","Europe & Central Asia","High income","75.033","211.484","19.2064192100000000","-5.449","-1.074",1,1,1,0,3
+"Slovenia","Europe & Central Asia","High income","67.075","106.842","3.6701241780000000","-2.939","2.794",0,1,0,0,1
+"Sweden","Europe & Central Asia","High income","36.561","948.787","57.6986144600000000","-0.548","4.832",0,0,0,0,0
+"Eswatini","Sub-Saharan Africa","Lower middle income","55.626","7.086","0.44068590300000000000","-2.659","0.914",0,1,0,0,1
+"Seychelles","Sub-Saharan Africa","High income","46.601","2.818","0.54952183170000000000","-0.633","-4.564",0,0,0,0,0
+"Syrian Arab Republic","Middle East, North Africa, Afghanistan & Pakistan","Low income","30.024","60.043",NULL,"-7.79","-2.843",0,0,1,0,1
+"Chad","Sub-Saharan Africa","Low income","25.678","36.085",NULL,"-1.168","1.696",0,0,0,0,0
+"Togo","Sub-Saharan Africa","Low income","56.713","19.302",NULL,"-3.001","-1.687",0,0,0,0,0
+"Thailand","East Asia & Pacific","Upper middle income","69.699","675.349","293.8876000000000000","-2.216","2.669",0,0,0,0,0
+"Tajikistan","Europe & Central Asia","Lower middle income","25.654","27.657",NULL,"-2.5","-1.99",0,0,0,0,0
+"Turkmenistan","Europe & Central Asia","Upper middle income","4.895","114.732",NULL,"-0.702","-1.27",0,0,0,0,0
+"Timor-Leste","East Asia & Pacific","Lower middle income","16.001","2.953","0.67390356470000000000","-51.733","-35.333",0,0,1,1,2
+"Tonga","East Asia & Pacific","Upper middle income","76.65","0.854","0.21514931860000000000","-11.636","-5.907",1,0,1,1,3
+"Trinidad and Tobago","Latin America & Caribbean","High income","82.074","32.265",NULL,"-2.732","4.293",1,0,0,0,1
+"Tunisia","Middle East, North Africa, Afghanistan & Pakistan","Lower middle income","91.054","62.669","9.7445348800000000","-6.801","-4.77",1,0,1,0,2
+"Turkey","Europe & Central Asia","Upper middle income","27.486","2027.846","210.2600000000000000","-2.683","-1.161",0,0,0,0,0
+"Tuvalu","East Asia & Pacific","Upper middle income","1.888","0.081",NULL,"-8.776","-7.834",0,0,1,1,2
+"Taiwan, China","East Asia & Pacific","High income","27.56","1273.582",NULL,"-2.127","15.383",0,0,0,0,0
+"Tanzania","Sub-Saharan Africa","Lower middle income","42.633","151.961",NULL,"-3.156","-1.992",0,0,0,0,0
+"Uganda","Sub-Saharan Africa","Low income","53.294","112.31","3.3585146500000000","-4.64","-1.383",0,1,0,0,1
+"Ukraine","Europe & Central Asia","Upper middle income","119.609","290.868","54.7659200000000000","-1.299","-7.371",1,0,0,1,2
+"Uruguay","Latin America & Caribbean","High income","67.305","121.215","19.9480000000000000","-2.117","-1.749",0,0,0,0,0
+"United States","North America","High income","142.113","39031.262","273.4387986000000000","-7.389","-3.558",1,1,1,0,3
+"Uzbekistan","Europe & Central Asia","Lower middle income","26.768","301.174","77.0863500000000000","-2.071","-4.514",0,0,0,0,0
+"St. Vincent and the Grenadines","Latin America & Caribbean","Upper middle income","144.677","1.558","0.16956229890000000000","-9.642","-16.092",1,1,1,1,4
+"Venezuela, RB","Latin America & Caribbean",NULL,"308.747","117.908","8.5380000000000000","-5.842","4.78",1,1,1,0,3
+"Vietnam","East Asia & Pacific","Lower middle income","26.634","705.443","55.4526225800000000","-1.251","0.564",0,0,0,0,0
+"Vanuatu","East Asia & Pacific","Lower middle income","52.929","1.789","0.42059237020000000000","-3.762","-4.673",0,0,0,0,0
+"Samoa","East Asia & Pacific","Upper middle income","19.173","1.75","0.16255914790000000000","-1.544","-2.278",0,0,0,0,0
+"South Africa","Sub-Saharan Africa","Upper middle income","82.615","577.966","81.0600000000000000","-3.915","-1.821",1,0,0,0,1
+"Zambia","Sub-Saharan Africa","Lower middle income","86.004","60.5","5.5076300000000000","-1.963","1.372",1,1,0,0,2
+"Zimbabwe","Sub-Saharan Africa","Lower middle income","37.608","67.762",NULL,"-0.911","1.5",0,0,0,0,0
