@@ -3,28 +3,29 @@
    Design tokens (sky-blue theme)
    ============================================================ */
 :root{
-  --bg:          #0A1220;
-  --sidebar-bg:  #0D1626;
-  --panel:       #101B2E;
-  --panel-2:     #16233A;
-  --hairline:    #223252;
+  --bg:          #050912;
+  --sidebar-bg:  #070C18;
+  --panel:       #0E1830;
+  --panel-2:     #16264A;
+  --hairline:    #263A63;
 
-  --paper:       #EAF1FB;
-  --muted:       #93A7C7;
-  --dim:         #64789C;
+  --paper:       #F3F7FF;
+  --muted:       #ABC2EC;
+  --dim:         #7188B4;
 
-  --accent:      #4C8DFF;
-  --accent-dark: #2F6FE0;
-  --accent-soft: rgba(76,141,255,0.14);
+  --accent:       #4C8DFF;
+  --accent-dark:  #2F6FE0;
+  --accent-bright:#82B4FF;
+  --accent-soft:  rgba(76,141,255,0.18);
 
-  --red:        #E5635A;
-  --red-soft:   rgba(229,99,90,0.14);
-  --amber:      #E3A34E;
-  --amber-soft: rgba(227,163,78,0.14);
-  --green:      #4FBE8C;
-  --green-soft: rgba(79,190,140,0.14);
+  --red:        #FF6E62;
+  --red-soft:   rgba(255,110,98,0.16);
+  --amber:      #F7B155;
+  --amber-soft: rgba(247,177,85,0.16);
+  --green:      #4FDBA3;
+  --green-soft: rgba(79,219,163,0.16);
   --blue:       #4C8DFF;
-  --blue-soft:  rgba(76,141,255,0.14);
+  --blue-soft:  rgba(76,141,255,0.16);
 
   --serif: "Fraunces", Georgia, serif;
   --sans:  "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -39,14 +40,18 @@
 html{scroll-behavior:smooth;}
 body{
   margin:0;
-  background:var(--bg);
+  background:
+    radial-gradient(1100px 620px at 82% -8%, rgba(76,141,255,0.10) 0%, rgba(76,141,255,0) 60%),
+    radial-gradient(900px 500px at -5% 12%, rgba(47,111,224,0.08) 0%, rgba(47,111,224,0) 55%),
+    var(--bg);
+  background-attachment:fixed;
   color:var(--paper);
   font-family:var(--sans);
   font-size:15px;
   line-height:1.5;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3{font-family:var(--serif); font-weight:600; margin:0; color:var(--paper);}
+h1,h2,h3{font-family:var(--serif); font-weight:600; margin:0; color:var(--paper); letter-spacing:-0.01em;}
 a{color:inherit;}
 ::selection{background:var(--accent); color:#fff;}
 
