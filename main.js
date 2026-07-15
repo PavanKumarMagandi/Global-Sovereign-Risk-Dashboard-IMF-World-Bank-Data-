@@ -582,7 +582,30 @@ const tblQ8 = createTable("tblQ8", [
   {key:"years_to_ratio_doubling", label:"Years to doubling", number:true, decimals:1},
   {key:"doomsday_urgency_flag", label:"Flag", flag:true},
 ]);
-function renderQ8(){ tblQ8.update(filterRows(DATA.Q8)); }
+function renderQ8(){
+  const rows = filterRows(DATA.Q8);
+  const top15 = [...rows]
+    .filter(r => typeof r.years_to_ratio_doubling === "number" && !Number.isNaN(r.years_to_ratio_doubling))
+    .sort((a,b) => a.years_to_ratio_doubling - b.years_to_ratio_doubling)
+    .slice(0,15);
+
+  try{
+    setChart("chartQ8", {
+      type:"bar",
+      data:{
+        labels: top15.map(r => r.country_name),
+        datasets:[{ data: top15.map(r => r.years_to_ratio_doubling), backgroundColor: top15.map(r => COLORS[flagClass(r.doomsday_urgency_flag)]) }]
+      },
+      options:{
+        indexAxis:"y",
+        plugins:{legend:{display:false}, tooltip:{callbacks:{label:(ctx)=> `${ctx.raw.toFixed(1)} years at current debt/GDP growth trajectory`}}},
+        scales:{ x:{title:{display:true,text:"Years until debt-to-GDP ratio doubles"}, grid:{color:"#1B1F28"}}, y:{grid:{display:false}} }
+      }
+    });
+  } catch(err){ console.error("[dashboard] Q8 chart failed:", err); }
+
+  tblQ8.update(rows);
+}
 
 /* ============================================================
    Q2 — devaluation risk table (year: reer_year)
@@ -598,7 +621,40 @@ const tblQ2 = createTable("tblQ2", [
   {key:"ca_pct_gdp_forecast_4yr_ahead", label:"CA fcst +4y", number:true, decimals:2},
   {key:"devaluation_risk_flag", label:"Flag", flag:true},
 ]);
-function renderQ2(){ tblQ2.update(filterRows(DATA.Q2, "reer_year")); }
+function renderQ2(){
+  const rows = filterRows(DATA.Q2, "reer_year");
+  const top10 = [...rows]
+    .filter(r => typeof r.ca_pct_deterioration_2yr === "number" && !Number.isNaN(r.ca_pct_deterioration_2yr))
+    .sort((a,b) => a.ca_pct_deterioration_2yr - b.ca_pct_deterioration_2yr)
+    .slice(0,10);
+
+  const palette = ["#C4453A","#C08A3E","#4472A8","#4C8B6C","#8B92A0","#A85C7A","#5B8FA8","#B37B3E","#7A8B4C","#9B5A5A"];
+
+  try{
+    setChart("chartQ2", {
+      type:"line",
+      data:{
+        labels:["Now","+2yr forecast","+4yr forecast"],
+        datasets: top10.map((r,i) => ({
+          label: r.country_name,
+          data:[r.current_account_pct_gdp_now, r.ca_pct_gdp_forecast_2yr_ahead, r.ca_pct_gdp_forecast_4yr_ahead],
+          borderColor: palette[i % palette.length],
+          backgroundColor: palette[i % palette.length],
+          pointRadius:4, tension:0
+        }))
+      },
+      options:{
+        plugins:{legend:{display:true, position:"bottom", labels:{boxWidth:10, font:{size:10}}}},
+        scales:{
+          y:{title:{display:true,text:"Current account (% of GDP)"}, grid:{color:"#1B1F28"}},
+          x:{grid:{display:false}}
+        }
+      }
+    });
+  } catch(err){ console.error("[dashboard] Q2 chart failed:", err); }
+
+  tblQ2.update(rows);
+}
 
 /* ============================================================
    Q3 — compare cards (IDA vs IBRD) — UNFILTERED, lending-category aggregate
@@ -668,7 +724,31 @@ const tblQ4 = createTable("tblQ4", [
   {key:"fiscal_balance_deterioration", label:"Fiscal deterior.", number:true, decimals:2},
   {key:"market_mispricing_flag", label:"Flag", flag:true},
 ]);
-function renderQ4(){ tblQ4.update(filterRows(DATA.Q4, "stock_data_year")); }
+function renderQ4(){
+  const rows = filterRows(DATA.Q4, "stock_data_year");
+  try{
+    setChart("chartQ4", {
+      type:"scatter",
+      data:{ datasets:[{
+        data: rows.map(r => ({ x:r.fiscal_balance_deterioration, y:r.stock_3yr_gain_pct, name:r.country_name })),
+        backgroundColor: rows.map(r => COLORS[flagClass(r.market_mispricing_flag)] + "cc"),
+        borderColor: rows.map(r => COLORS[flagClass(r.market_mispricing_flag)]),
+        pointRadius:5, pointHoverRadius:7, borderWidth:1.5
+      }]},
+      options:{
+        plugins:{legend:{display:false}, tooltip:{callbacks:{label:(ctx)=>{
+          const d = ctx.raw; return `${d.name}: fiscal deterior. ${d.x.toFixed(2)}, stock gain ${d.y.toFixed(1)}%`;
+        }}}},
+        scales:{
+          x:{title:{display:true,text:"Fiscal balance deterioration (pp)"}, grid:{color:"#1B1F28"}},
+          y:{title:{display:true,text:"3-year stock market gain (%)"}, grid:{color:"#1B1F28"}}
+        }
+      }
+    });
+  } catch(err){ console.error("[dashboard] Q4 chart failed:", err); }
+
+  tblQ4.update(rows);
+}
 
 /* ============================================================
    Q6 — spending efficiency scatter + table (year: fiscal_year)
@@ -757,7 +837,39 @@ const tblQ10 = createTable("tblQ10", [
   {key:"latest_debt_pct_gdp", label:"Latest debt %", number:true, decimals:2},
   {key:"structural_decline_flag", label:"Flag", flag:true},
 ]);
-function renderQ10(){ tblQ10.update(filterRows(DATA.Q10, "latest_year")); }
+function renderQ10(){
+  const rows = filterRows(DATA.Q10, "latest_year");
+  const top12 = [...rows]
+    .sort((a,b) => {
+      const sa = (a.fiscal_deterioration_streak_yrs||0) + (a.debt_deterioration_streak_yrs||0) + (a.ca_deterioration_streak_yrs||0);
+      const sb = (b.fiscal_deterioration_streak_yrs||0) + (b.debt_deterioration_streak_yrs||0) + (b.ca_deterioration_streak_yrs||0);
+      return sb - sa;
+    })
+    .slice(0,12);
+
+  try{
+    setChart("chartQ10", {
+      type:"bar",
+      data:{
+        labels: top12.map(r => r.country_name),
+        datasets:[
+          { label:"Fiscal streak (yr)", data: top12.map(r => r.fiscal_deterioration_streak_yrs), backgroundColor:COLORS.red },
+          { label:"Debt streak (yr)", data: top12.map(r => r.debt_deterioration_streak_yrs), backgroundColor:COLORS.amber },
+          { label:"CA streak (yr)", data: top12.map(r => r.ca_deterioration_streak_yrs), backgroundColor:COLORS.blue },
+        ]
+      },
+      options:{
+        plugins:{legend:{display:true, position:"bottom", labels:{boxWidth:10, font:{size:10}}}},
+        scales:{
+          x:{grid:{display:false}, ticks:{maxRotation:45, minRotation:45}},
+          y:{title:{display:true,text:"Consecutive years deteriorating"}, grid:{color:"#1B1F28"}}
+        }
+      }
+    });
+  } catch(err){ console.error("[dashboard] Q10 chart failed:", err); }
+
+  tblQ10.update(rows);
+}
 
 /* ============================================================
    STATIC "full screen" counts — computed once from the
