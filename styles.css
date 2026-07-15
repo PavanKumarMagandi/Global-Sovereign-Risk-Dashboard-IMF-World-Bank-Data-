@@ -3,32 +3,32 @@
    Design tokens (sky-blue theme)
    ============================================================ */
 :root{
-  --bg:          #EFF6FC;
-  --sidebar-bg:  #E4F0FB;
-  --panel:       #FFFFFF;
-  --panel-2:     #EAF3FC;
-  --hairline:    #CFE2F2;
+  --bg:          #0A1220;
+  --sidebar-bg:  #0D1626;
+  --panel:       #101B2E;
+  --panel-2:     #16233A;
+  --hairline:    #223252;
 
-  --paper:       #16324D;
-  --muted:       #4E6E8C;
-  --dim:         #82A0B9;
+  --paper:       #EAF1FB;
+  --muted:       #93A7C7;
+  --dim:         #64789C;
 
-  --accent:      #2E7CC0;
-  --accent-dark: #1F5D97;
-  --accent-soft: rgba(46,124,192,0.11);
+  --accent:      #4C8DFF;
+  --accent-dark: #2F6FE0;
+  --accent-soft: rgba(76,141,255,0.14);
 
-  --red:        #C0483F;
-  --red-soft:   rgba(192,72,63,0.12);
-  --amber:      #B27A2E;
-  --amber-soft: rgba(178,122,46,0.12);
-  --green:      #3E8562;
-  --green-soft: rgba(62,133,98,0.12);
-  --blue:       #2E7CC0;
-  --blue-soft:  rgba(46,124,192,0.12);
+  --red:        #E5635A;
+  --red-soft:   rgba(229,99,90,0.14);
+  --amber:      #E3A34E;
+  --amber-soft: rgba(227,163,78,0.14);
+  --green:      #4FBE8C;
+  --green-soft: rgba(79,190,140,0.14);
+  --blue:       #4C8DFF;
+  --blue-soft:  rgba(76,141,255,0.14);
 
-  --serif: "Source Serif 4", Georgia, serif;
+  --serif: "Fraunces", Georgia, serif;
   --sans:  "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  --mono:  "IBM Plex Mono", "SF Mono", monospace;
+  --mono:  "JetBrains Mono", "SF Mono", monospace;
 
   --radius: 3px;
   --sidebar-w: 250px;
