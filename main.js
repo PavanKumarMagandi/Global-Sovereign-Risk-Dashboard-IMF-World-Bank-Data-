@@ -9,9 +9,9 @@
    expects. Requires the page to be served over http(s):// — browsers
    block fetch() of local files under file://. */
 const CSV_FILES = {
-  Q1:"data/Q1.csv", Q2:"data/Q2.csv", Q3:"data/Q3.csv", Q4:"data/Q4.csv",
-  Q5:"data/Q5.csv", Q6:"data/Q6.csv", Q7:"data/Q7.csv", Q8:"data/Q8.csv",
-  Q9a:"data/Q9a.csv", Q9b:"data/Q9b.csv", Q10:"data/Q10.csv"
+  Q1:"Q1.csv", Q2:"Q2.csv", Q3:"Q3.csv", Q4:"Q4.csv",
+  Q5:"Q5.csv", Q6:"Q6.csv", Q7:"Q7.csv", Q8:"Q8.csv",
+  Q9a:"Q9a.csv", Q9b:"Q9b.csv", Q10:"Q10.csv"
 };
 const NUMERIC_RE = /^-?\d+(\.\d+)?$/;
 
